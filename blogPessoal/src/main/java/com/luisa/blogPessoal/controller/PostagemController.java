@@ -23,7 +23,7 @@ import com.luisa.blogPessoal.repository.PostagemRepository;
 @CrossOrigin("*")
 public class PostagemController {
 	
-	@Autowired
+	@Autowired // "extends da interface repository"
 	private PostagemRepository repository; //interface
 	
 	@GetMapping
