@@ -18,13 +18,13 @@ services:
       - generation-network
   blogpessoal:
     restart: always
-    build: ./blogpessoal
-    working_dir: /blogpessoal
+    build: ./blogPessoal
+    working_dir: /blogPessoal
     environment:
       TZ: America/Sao_Paulo
       SPRING_BOOT_ENVIRONMENT: Production
     volumes:
-      - ./blogpessoal:/blogpessoal
+      - ./blogPessoal:/blogPessoal
       - ~/.m2:/root/.m2
     ports:
       - "9000:8080"

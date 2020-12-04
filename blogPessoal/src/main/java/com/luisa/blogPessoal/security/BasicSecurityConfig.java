@@ -35,7 +35,8 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/usuarios/cadastrar").permitAll() //client conseguir fazer requisições dentro da API
 		.anyRequest().authenticated()
 		.and().httpBasic()
-		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) //qual o tipo de sessao
+		.and().sessionManagement()
+		.sessionCreationPolicy(SessionCreationPolicy.STATELESS) //qual o tipo de sessao
 		.and().cors() //STATELESS : não guarda sessao
 		.and().csrf().disable(); //desabilita
 		
