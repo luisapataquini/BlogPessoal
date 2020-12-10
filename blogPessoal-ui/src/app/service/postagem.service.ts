@@ -18,7 +18,21 @@ export class PostagemService {
     return this.http.get<Postagem[]>('http://localhost:9000/postagens',this.token)
   }
 
+  getByIdPostagem(id: number): Observable<Postagem>{
+    return this.http.get<Postagem>(`http://localhost:9000/postagens/${id}`, this.token)
+  }
+
   postPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>('http://localhost:9000/postagens',postagem, this.token)
   }
+
+  putPostagem(postagem: Postagem): Observable<Postagem> {
+    return this.http.put<Postagem>('http://localhost:9000/postagens',postagem, this.token)
+  }
+  //delete nao tem retorno, portanto não é necessário observable
+
+  deletePostagem(id:number) {
+    return this.http.delete(`http://localhost:9000/postagens/${id}`, this.token)
+  }
+
 }

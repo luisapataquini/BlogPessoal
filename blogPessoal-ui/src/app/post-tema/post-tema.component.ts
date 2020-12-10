@@ -10,7 +10,7 @@ import { TemaService } from '../service/tema.service';
 })
 export class PostTemaComponent implements OnInit {
 
-  tema: Tema = new Tema
+  tema: Tema = new Tema()
   listaTemas: Tema[]
 
   constructor(
@@ -19,7 +19,7 @@ export class PostTemaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.findByIdTema
+    this.findAllTemas()
   }
 
   findAllTemas() {

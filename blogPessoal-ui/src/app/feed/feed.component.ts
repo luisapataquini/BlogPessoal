@@ -50,7 +50,7 @@ export class FeedComponent implements OnInit {
         this.postagem= resp
         this.postagem = new Postagem()
         alert ('Postagem realizada com sucesso!')
-        this.findAllPostagens 
+        this.findAllPostagens() 
       })
     }
   
