@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../model/User';
 import { UserLogin } from '../model/UserLogin';
 import { Observable } from 'rxjs';
+import { environment } from './../../environments/environment.prod';;
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +23,9 @@ export class AuthService {
 
   btnSair(){
     let ok = false
-    let token = localStorage.getItem('token')
+    let token = environment.token
 
-    if (token != null) {
+    if (token != '') {
       ok = true
     }
 
@@ -33,9 +34,9 @@ export class AuthService {
 
   btnLogin() {
     let ok = false
-    let token = localStorage.getItem('token')
+    let token = environment.token
 
-    if (token == null) {
+    if (token == '') {
       ok = true
     }
 

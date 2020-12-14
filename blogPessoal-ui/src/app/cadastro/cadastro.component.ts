@@ -28,15 +28,11 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar(){
-    console.log("usuario usuario" + this.user.nome)
-    console.log("usuario usuario" + this.user.usuario)
-    console.log("usuario senha" + this.user.senha)
-    console.log("senha variavel"+ this.senha)
     if(this.senha === this.user.senha){
      this.authService.cadastrar(this.user).subscribe((resp: User) =>{
       this.user = resp
       this.router.navigate(['/login'])
-      this.alert.showAlertSuccess('Usuário cadastrado com sucesso!!')
+      this.alert.showAlertSuccess('Usuário cadastrado com sucesso!')
      })
     }else{
       this.alert.showAlertDanger('As senhas não conferem.')
