@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from './../../environments/environment.prod';
 import { Tema } from '../model/Tema';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class TemaService {
   constructor(private http: HttpClient) { }
 
   token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token')!)
+    headers: new HttpHeaders().set('Authorization', environment.token)
   }
  
   getAllTemas() : Observable<Tema[]> {
@@ -35,6 +36,6 @@ export class TemaService {
   }
 
   getByDescricaoTema(descricao: string):Observable<Tema[]> {
-    return this.http.get<Tema[]>(`http://localhost:9000/tema/descricao/${descricao}`, this.token)
+    return this.http.get<Tema[]>(`http://localhost:9000/tema/descricao/${descricao}`,this.token)
   }
 }
